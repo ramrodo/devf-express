@@ -1,5 +1,13 @@
 {
   // https://github.com/airbnb/javascript
+  /*
+  yarn add eslint
+  yarn add eslint-config-airbnb
+  yarn add babel-eslint
+  yarn add eslint-plugin-jsx-a11y
+  yarn add eslint-plugin-react
+  yarn add eslint-plugin-import
+  */
   "extends": "airbnb",
   "parser": "babel-eslint",
   "env": {
