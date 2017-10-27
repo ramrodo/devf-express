@@ -15,6 +15,20 @@ router.get('/', (req, res, next) => {
   });
 });
 
+router.get('/:id', (req, res, next) => {
+  const { id } = req.params;
+  const beerQuery = {
+    where: {
+      id,
+    },
+  };
+  models.Beer.findOne(beerQuery)
+    .then((beer) => {
+      if (!beer) {res.status(404).send({ error: 'not found' }); }
+      res.status(200).send({ beer });
+    });
+});
+
 router.post('/', (req, res, next) => {
   const { parameters } = req;
   const beerParams = parameters
